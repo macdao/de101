@@ -39,4 +39,4 @@ spark = SparkSession \
 path = "tmp/**/*.csv"
 
 df = spark.read.option("header", True).csv(path)
-df.write.mode("overwrite").parquet("output/1")
+df.select(df.date, df.model, df.failure).write.mode("overwrite").parquet("output/1")

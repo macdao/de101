@@ -1,14 +1,7 @@
 ## local
 
 - [x] Practice 1
-  - [x] load data to spark
-    - [x] load csv
-    - [x] load zip
-    - [x] save to file
-  - [x] processing
-  - [x] download file
-  - [x] publish
-- [ ] airflow
+- [x] AirFlow
 - [ ] Practice 2
 
 ## next
