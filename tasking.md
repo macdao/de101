@@ -4,7 +4,7 @@
 - [x] AirFlow
 - [x] Practice 2
   - [x] script
-  - [ ] airflow
+  - [x] airflow
 - [ ] fix 6/15/19
 
 ## next
