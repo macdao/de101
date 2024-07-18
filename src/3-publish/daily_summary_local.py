@@ -5,7 +5,9 @@ spark = SparkSession \
     .appName("publish") \
     .getOrCreate()
 
-path = "output/2"
+path = "output/2_daily_summary"
 
 df = spark.read.parquet(path)
-df.write.mode("overwrite").option("header", True).csv("output/3")
+df.write.mode("overwrite").option("header", True).csv("output/3_daily_summary")
+
+spark.stop()

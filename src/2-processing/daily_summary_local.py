@@ -12,4 +12,6 @@ path = "output/1"
 df = spark.read.parquet(path)
 result = df.groupBy(df.date).agg(sf.count("*").alias("count"), sf.sum(df.failure).cast(IntegerType()).alias("failures"))
 
-result.write.mode("overwrite").parquet("output/2")
+result.write.mode("overwrite").parquet("output/2_daily_summary")
+
+spark.stop()

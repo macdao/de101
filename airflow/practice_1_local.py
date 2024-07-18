@@ -18,11 +18,11 @@ def practice_1_local():
 
     @task.bash(cwd = cwd)
     def processing() -> str:
-        return ".venv/bin/spark-submit src/2-processing/local.py"
+        return ".venv/bin/spark-submit src/2-processing/daily_summary_local.py"
     
     @task.bash(cwd = cwd)
     def publish() -> str:
-        return ".venv/bin/spark-submit src/3-publish/local.py"
+        return ".venv/bin/spark-submit src/3-publish/daily_summary_local.py"
 
     load()
     processing()
