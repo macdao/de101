@@ -5,7 +5,7 @@
 - [x] Practice 2
   - [x] script
   - [x] airflow
-- [ ] fix 6/15/19
+- [x] fix 6/15/19
 
 ## next
 

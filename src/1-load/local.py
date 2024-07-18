@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession
 from zipfile import ZipFile
 import urllib.request
 from pathlib import Path
+from pyspark.sql import functions as sf
 
 file_list2 = [
     "Q1_2019", "Q2_2019", "Q3_2019", "Q4_2019", 
@@ -39,6 +40,8 @@ spark = SparkSession \
 path = "tmp/**/*.csv"
 
 df = spark.read.option("header", True).csv(path)
-df.select(df.date, df.model, df.failure).write.mode("overwrite").parquet("output/1")
+# in case of 6/17/19
+date_column = sf.when(sf.to_date(df.date).isNull(), sf.to_date(df.date, "M/d/yy")).otherwise(df.date)
+df.select(date_column.alias("date"), df.model, df.failure).write.mode("overwrite").parquet("output/1")
 
 spark.stop()
