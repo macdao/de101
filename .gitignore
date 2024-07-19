@@ -1,4 +1,3 @@
-/output/
-/tmp/
-/datasource/
+/data_lake/
+/cache/
 /.venv/
