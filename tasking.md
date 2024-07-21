@@ -9,6 +9,12 @@
 
 ## next
 
-- 数仓可选：HDFS、HIVE、S3
-- 执行环境可选：Standalone、Yarn、Glue、EMR
+- [x] S3 & EMR
+  - [x] EMR load
+  - [x] load in s3
+- BI
+- AirFlow in docker
+
+- 数仓可选：HDFS、HIVE
+- 执行环境可选：Standalone、Yarn、Glue
 - spark in docker

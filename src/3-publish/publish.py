@@ -1,7 +1,12 @@
 from pyspark.sql import SparkSession
+import argparse
 
-input_path = "data_lake/2_yearly_summary"
-output_path = "data_lake/3_yearly_summary"
+parser = argparse.ArgumentParser()
+parser.add_argument("input_path")
+parser.add_argument("output_path")
+args = parser.parse_args()
+input_path = args.input_path
+output_path = args.output_path
 
 spark = SparkSession \
     .builder \
