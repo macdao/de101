@@ -14,15 +14,15 @@ cwd = f"{home}/workspace/macdao/de101"
 def practice_2_local():
     @task.bash(cwd = cwd)
     def load() -> str:
-        return ".venv/bin/spark-submit src/1-load/local.py"
+        return "source .venv/bin/activate; spark-submit spark/load.py local data_lake/1"
 
     @task.bash(cwd = cwd)
     def processing() -> str:
-        return ".venv/bin/spark-submit src/2-processing/yearly_summary_local.py"
+        return "source .venv/bin/activate; spark-submit spark/processing_yearly_summary.py data_lake/1 data_lake/2_yearly_summary"
     
     @task.bash(cwd = cwd)
     def publish() -> str:
-        return ".venv/bin/spark-submit src/3-publish/yearly_summary_local.py"
+        return "source .venv/bin/activate; spark-submit spark/publish.py data_lake/2_yearly_summary data_lake/3_yearly_summary"
 
     load()
     processing()
